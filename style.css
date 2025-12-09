@@ -1,0 +1,191 @@
+/* GLOBAL */
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: linear-gradient(135deg, #dfe9f3, #f3d7ff);
+    color: #333;
+}
+
+/* SIDEBAR */
+.sidebar {
+    width: 240px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    background: linear-gradient(135deg, #6a11cb, #2575fc);
+    padding: 22px;
+    color: white;
+    border-radius: 0 20px 20px 0;
+    box-shadow: 4px 0 12px rgba(0,0,0,0.15);
+}
+
+.side-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.side-link {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 12px;
+    background: rgba(255,255,255,0.25);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.25s ease;
+}
+
+.side-link:hover {
+    background: rgba(255,255,255,0.45);
+}
+
+/* MAIN CONTENT */
+.content-wrapper {
+    margin-left: 270px;
+    padding: 25px;
+    width: calc(100% - 270px);
+}
+
+/* PAGE */
+.page {
+    display: none;
+}
+
+.page.active {
+    display: flex;
+    gap: 20px;
+}
+
+/* PANELS */
+.left-panel { width: 38%; }
+.right-panel { width: 62%; }
+
+/* GRADIENT CARDS */
+.gradient1 {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.gradient2 {
+    background: linear-gradient(135deg, #ff758c, #ff7eb3);
+    color: white;
+}
+
+.gradient3 {
+    background: linear-gradient(135deg, #43cea2, #185a9d);
+    color: white;
+}
+
+/* STAT CARDS */
+.stat-card {
+    padding: 18px;
+    border-radius: 14px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+}
+
+.stat-card h3 {
+    margin: 0;
+    font-size: 26px;
+}
+
+.stat-card p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* SCROLL ROW */
+.scroll-row {
+    display: flex;
+    gap: 14px;
+    overflow-x: auto;
+    padding-bottom: 10px;
+}
+
+.scroll-card {
+    min-width: 180px;
+    padding: 14px;
+    border-radius: 14px;
+    background: linear-gradient(135deg, #f6d365, #fda085);
+    color: #333;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+}
+
+/* CARDS */
+.form-card, .info-card, .list-card {
+    background: linear-gradient(135deg, #ffffffdd, #f3f3ffcc);
+    padding: 18px;
+    border-radius: 14px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+    margin-bottom: 16px;
+}
+
+/* GRID LISTS */
+.grid-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+    gap: 16px;
+}
+
+/* INPUTS */
+input, select {
+    width: 100%;
+    padding: 12px;
+    border-radius: 10px;
+    border: 1px solid #bbb;
+    margin-top: 10px;
+    font-size: 15px;
+    background: #ffffffdd;
+}
+
+/* BUTTONS */
+.submit-btn, .add-btn, .delete-btn {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* BLUE BUTTON */
+.submit-btn {
+    background: linear-gradient(135deg, #4facfe, #00f2fe);
+    color: white;
+}
+
+/* GREEN BUTTON */
+.add-btn {
+    background: linear-gradient(135deg, #42e695, #3bb2b8);
+    color: white;
+}
+
+/* RED BUTTON */
+.delete-btn {
+    background: linear-gradient(135deg, #ff5858, #f857a6);
+    color: white;
+}
+
+/* TOAST */
+.toast {
+    position: fixed;
+    bottom: -50px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #222;
+    padding: 12px 25px;
+    color: white;
+    border-radius: 12px;
+    transition: 0.4s;
+}
+
+.toast.show {
+    bottom: 20px;
+}

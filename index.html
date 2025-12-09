@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NGO Collaboration Portal</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+        <h2 class="side-title">Portal</h2>
+
+        <button class="side-link" onclick="switchPage('dashboard')">Dashboard</button>
+        <button class="side-link" onclick="switchPage('ngoDashboard')">NGO</button>
+        <button class="side-link" onclick="switchPage('volDashboard')">Volunteer</button>
+        <button class="side-link" onclick="switchPage('donorDashboard')">Donor</button>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div class="content-wrapper">
+
+        <!-- DASHBOARD PAGE -->
+        <div id="dashboard" class="page active">
+            <div class="left-panel">
+
+                <h2>Dashboard Overview</h2>
+
+                <div class="stats-grid">
+                    <div class="stat-card gradient1">
+                        <h3 id="ngoCount">0</h3>
+                        <p>NGOs</p>
+                    </div>
+
+                    <div class="stat-card gradient2">
+                        <h3 id="volCount">0</h3>
+                        <p>Volunteers</p>
+                    </div>
+
+                    <div class="stat-card gradient3">
+                        <h3 id="donorCount">0</h3>
+                        <p>Donors</p>
+                    </div>
+                </div>
+
+                <h3>Featured NGOs</h3>
+                <div class="scroll-row" id="featuredNGOs"></div>
+
+                <h3>Active Volunteers</h3>
+                <div class="scroll-row" id="featuredVolunteers"></div>
+
+                <h3>Recent Donors</h3>
+                <div class="scroll-row" id="featuredDonors"></div>
+
+            </div>
+
+            <div class="right-panel">
+                <h2>NGO Directory</h2>
+                <div id="dashboardNGOs" class="grid-list"></div>
+
+                <h2>Volunteer Directory</h2>
+                <div id="dashboardVolunteers" class="grid-list"></div>
+
+                <h2>Donor Directory</h2>
+                <div id="dashboardDonors" class="grid-list"></div>
+            </div>
+        </div>
+
+        <!-- NGO PAGE -->
+        <div id="ngoDashboard" class="page">
+            <div class="left-panel">
+                <h2>Register NGO</h2>
+
+                <div class="form-card">
+                    <input id="ngoName" placeholder="NGO Name">
+                    <input id="ngoMission" placeholder="Mission">
+                    <input id="ngoContact" placeholder="Contact Number">
+                    <input id="ngoLocation" placeholder="Location">
+                    <input id="ngoCategory" placeholder="Category">
+
+                    <input id="ngoWorkInput" placeholder="Add Work">
+                    <button class="add-btn" onclick="addNGOWork()">Add Work</button>
+
+                    <button class="submit-btn" onclick="registerNGO()">Register NGO</button>
+                </div>
+            </div>
+
+            <div class="right-panel">
+                <h2>NGO Directory</h2>
+                <div id="ngoCards" class="grid-list"></div>
+            </div>
+        </div>
+
+        <!-- VOLUNTEER PAGE -->
+        <div id="volDashboard" class="page">
+            <div class="left-panel">
+                <h2>Join as Volunteer</h2>
+
+                <div class="form-card">
+                    <input id="volName" placeholder="Name">
+                    <input id="volSkills" placeholder="Skills">
+                    <input id="volPhone" placeholder="Phone">
+                    <input id="volLocation" placeholder="Location">
+
+                    <label>Select NGO:</label>
+                    <select id="ngoDropdown" onchange="showVolunteerNGOInfo()"></select>
+
+                    <button id="joinBtn" class="submit-btn" onclick="joinNGO()">Join NGO</button>
+                </div>
+            </div>
+
+            <div class="right-panel">
+                <h2>Selected NGO Info</h2>
+                <div id="volNgoInfo" class="info-card"></div>
+
+                <h2>Volunteer List</h2>
+                <div id="volCards" class="grid-list"></div>
+
+                <h2>NGO Directory</h2>
+                <div id="volNGOCards" class="grid-list"></div>
+            </div>
+        </div>
+
+        <!-- DONOR PAGE -->
+        <div id="donorDashboard" class="page">
+            <div class="left-panel">
+                <h2>Donate to NGO</h2>
+
+                <div class="form-card">
+                    <input id="donorName" placeholder="Your Name">
+                    <input id="donorPhone" placeholder="Phone Number">
+
+                    <label>Select NGO:</label>
+                    <select id="donorNgoDropdown" onchange="showDonorNGOInfo()"></select>
+
+                    <label>Donation Type:</label>
+                    <select id="donationType" onchange="updateDonationFields()">
+                        <option value="">Select</option>
+                        <option value="Money">Money</option>
+                        <option value="Food">Food</option>
+                        <option value="Clothes">Clothes</option>
+                        <option value="Books">Books</option>
+                        <option value="Medicine">Medicine</option>
+                        <option value="Other">Other</option>
+                    </select>
+
+                    <div id="donationFields"></div>
+
+                    <button id="donateBtn" class="submit-btn" onclick="donate()">Donate</button>
+                </div>
+            </div>
+
+            <div class="right-panel">
+                <h2>Selected NGO Info</h2>
+                <div id="donorNgoInfo" class="info-card"></div>
+
+                <h2>Donor List</h2>
+                <div id="donorCards" class="grid-list"></div>
+
+                <h2>NGO Directory</h2>
+                <div id="donorNGOCards" class="grid-list"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <!-- TOAST -->
+    <div id="toast" class="toast"></div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
